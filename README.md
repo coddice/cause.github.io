@@ -15,7 +15,7 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4);
+            background: linear-gradient(270deg, #ff9a9e, #fad0c4);
             background-size: 600% 600%;
             animation: gradientAnimation 10s ease infinite;
         }
@@ -61,6 +61,47 @@
         button:hover {
             background: #ff3b2d;
         }
+
+        .gradient-box {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            animation: colorChange 5s ease infinite;
+        }
+
+        .box1 {
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, #ff6f61, #ff3b2d);
+            animation-delay: 0s;
+        }
+
+        .box2 {
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #6a82fb, #fc5c7d);
+            animation-delay: 1s;
+        }
+
+        .box3 {
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, #3ab8ea, #00d2ff);
+            animation-delay: 2s;
+        }
+
+        .box4 {
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #a8e063, #56ab2f);
+            animation-delay: 3s;
+        }
+
+        @keyframes colorChange {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
     </style>
 </head>
 <body>
@@ -69,6 +110,11 @@
         <p>Clicks: <span id="clickCount">0</span></p>
         <button id="clickButton">Click Me!</button>
     </div>
+    <div class="gradient-box box1"></div>
+    <div class="gradient-box box2"></div>
+    <div class="gradient-box box3"></div>
+    <div class="gradient-box box4"></div>
+
     <script>
         // JavaScript код
         let clickCount = parseInt(localStorage.getItem('clickCount')) || 0;
